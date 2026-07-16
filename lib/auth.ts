@@ -20,6 +20,10 @@ export const auth = betterAuth({
   }),
   secret: process.env.BETTER_AUTH_SECRET,
   baseURL: process.env.BETTER_AUTH_URL || "http://localhost:3000",
+  trustedOrigins: [
+    "http://localhost:3000",
+    "https://share-plate-psi.vercel.app",
+  ],
   emailAndPassword: {
     enabled: true,
     minPasswordLength: 6,
