@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper-50 text-paper-900 font-body antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+::selection {
+  @apply bg-turmeric-200 text-paper-900;
+}
+
+/* Visible keyboard focus ring for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #f28f0c;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Freshness-ring signature element */
+.freshness-ring {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+.freshness-ring circle {
+  transition: stroke-dashoffset 0.6s ease;
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.card-surface {
+  @apply bg-white rounded-card shadow-card border border-paper-200;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-harvest-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-harvest-700 disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-harvest-700 ring-1 ring-inset ring-harvest-200 transition-colors hover:bg-harvest-50;
+}
+
+.btn-accent {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-turmeric-500 px-5 py-2.5 text-sm font-semibold text-paper-900 transition-colors hover:bg-turmeric-400;
+}
+
+.input-field {
+  @apply w-full rounded-xl border border-paper-300 bg-white px-4 py-2.5 text-sm text-paper-900 placeholder:text-paper-500 focus:border-harvest-500 focus:outline-none focus:ring-2 focus:ring-harvest-100;
+}
+
+.label-field {
+  @apply mb-1.5 block text-sm font-semibold text-paper-800;
+}
+
+.skeleton {
+  @apply animate-pulse bg-paper-200;
+}
