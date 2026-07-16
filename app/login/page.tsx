@@ -52,12 +52,6 @@ function LoginForm() {
     performLogin(email, password);
   }
 
-  function handleDemoLogin() {
-    setEmail("demo@shareplate.app");
-    setPassword("demopass123");
-    performLogin("demo@shareplate.app", "demopass123");
-  }
-
   async function handleGoogleLogin() {
     setError("");
     setGoogleLoading(true);
@@ -112,14 +106,7 @@ function LoginForm() {
           {googleLoading ? "Redirecting…" : "Continue with Google"}
         </button>
 
-        <button
-          onClick={handleDemoLogin}
-          disabled={loading || googleLoading}
-          className="btn-accent mt-3 w-full justify-center"
-          type="button"
-        >
-          <Sparkles className="h-4 w-4" /> Try demo login
-        </button>
+       
 
         <div className="my-5 flex items-center gap-3 text-xs font-medium uppercase text-paper-400">
           <span className="h-px flex-1 bg-paper-200" /> or continue with email <span className="h-px flex-1 bg-paper-200" />
